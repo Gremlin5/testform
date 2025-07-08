@@ -13,14 +13,14 @@
     [formGroup]="form"
     (ngSubmit)="onSubmit()"
     >
-        <div *ngIf="username?.errors?.['required'] && (username?.touched)" class="invalid-feedback"> *имя обязательно для заполнения</div>
+        <div *ngIf="username?.errors?.['required'] && (username?.touched)" class="invalid-feedback invalid-feedback-name"> *имя обязательно для заполнения</div>
         <div class="form-group">
             <label class="labeltx" for="name">Ваше имя:</label>
             <input formControlName="username" 
             type="text" id="name" class="input-data input-name-with-svg" name="name" required
             [class.is-invalid]="username?.invalid && (username?.touched)">
         </div>
-        <div class="invalid-feedback">
+        <div class="invalid-feedback invalid-feedback-email">
             <div *ngIf="email?.errors?.['required'] && (email?.dirty || email?.touched)">*email обязателен для заполнения</div>
             <div *ngIf="email?.errors?.['email'] && (email?.dirty || email?.touched)" > *введите корректный email</div>
         </div>
@@ -34,7 +34,7 @@
                 
         </div>
         
-        <div *ngIf="phone?.invalid && (phone?.dirty || phone?.touched)" class="invalid-feedback">
+        <div *ngIf="phone?.invalid && (phone?.dirty || phone?.touched)" class="invalid-feedback invalid-feedback-phone">
             <div *ngIf="phone?.errors?.['required']">*телефон обязателен</div>
         </div>
     
@@ -47,6 +47,7 @@
                 [dropSpecialCharacters]="false"
                 formControlName="phone"
                 placeholder="+7 (___) ___-__-__"
+                [class.is-invalid]="phone?.invalid && (phone?.dirty || phone?.touched)"
                 type="text" class="input-data input-phone-with-svg" name="phone">
         </div>
         <div class="form-group">
@@ -56,7 +57,7 @@
                     {{ option.name }}
             </select>
         </div>
-        <div *ngIf="message?.errors?.['required'] && (message?.touched)" class="invalid-feedback"> *сообщение обязательно для заполнения</div>
+        <div *ngIf="message?.errors?.['required'] && (message?.touched)" class="invalid-feedback invalid-feedback-message"> *сообщение обязательно для заполнения</div>
         <div class="form-group">
             <label class="labeltx" for="message">Ваше <br> сообщение:</label>
             <textarea formControlName="message" [class.is-invalid]="message?.invalid && (message?.touched)"
