@@ -21,18 +21,22 @@ input {
     border: 1px solid #868686;
     border-radius: 2px !important;
 }
+form {
+    padding-top: 100px;
+}
 
 .ftittle {
     color: #ffffff;
     font-size: 23px;
     font-weight: 100;
     text-align: left;
-    margin-bottom: 30px;
-    margin-top: 20px;
-    padding-left: 10px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding-left: 30px;
     padding-bottom: 5px;
     padding-top: 5px;
     padding-right: 5px;
+
 }
 .input-data {
     width: 71.7%;
@@ -55,6 +59,7 @@ input {
     margin-left: 16px;
 }
 .wrapper {
+    position: relative;
     background-color: #ffffff;
     padding-top: 1px;
     width: 450px;
@@ -68,12 +73,26 @@ input {
     width: fit-content;
 }
 .tittle {
+    position: absolute;
     width: 350px;
     background-color: #be4f4f;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
     clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 0% 100%);
-    
+    margin-left: -15px;
+    top: 20px;
+    z-index:1;
 }
+.trang {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    border-top: 20px solid #963d3d;
+    border-left: 14.9px solid transparent;
+    top: 65px;
+    right: 0px;
+    z-index:0;
+}
+
 .topic {
     width: 71.7%;
     font-size: 9px;
